@@ -1,0 +1,65 @@
+//重复输出一个给定的字符串（str第一个参数）n 次 （num第二个参数），如果第二个参数num不是正数的时候，返回空字符串。
+
+function repeatStringNumTimes(str, num) {
+  return str;
+}
+repeatStringNumTimes("abc", 3);
+
+repeatStringNumTimes("*", 3) //应该返回 "***".
+repeatStringNumTimes("abc", 3) //应该返回 "abcabcabc".
+repeatStringNumTimes("abc", 4) //应该返回 "abcabcabcabc".
+repeatStringNumTimes("abc", 1) //应该返回 "abc".
+repeatStringNumTimes("*", 8) //应该返回 "********".
+repeatStringNumTimes("abc", -2) //应该返回 "".
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+//1.使用"while"循环
+
+function repeatStringNumTimes (string, times) {
+  var repeatString = "";
+  while (times > 0) {
+    repeatString += string;
+    times--;
+  }
+  return repeatString;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+//2.使用 for 循环
+function repeatStringNumTimes (string, times) {
+  var repeatString = "";
+  for (var i = 0 ; i < times ; i++) {
+    repeatString += string;
+  }
+  return repeatString;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+//3.通过条件判断和递归重复输出一个字符串
+//递归是一种通过重复地调用函数本身，直到它达到达结果为止的迭代操作的技术。为了使其正常工作，必须包括递归的一些关键特征。
+//第一种是基本情况：一个语句，通常在一个条件语句（如if）中，停止递归。
+//第二种是递归情况：调用递归函数本身的语句。
+
+function repeatStringNumTimes (string, times) {
+  if (times < 0) return "";
+  if (times === 1) {
+    return string;
+  } else {
+    return string + repeatStringNumTimes (string,times - 1);
+  }
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------
+//4.使用ES6 `repeat()` 方法重复输出一个字符串
+function repeatStringNumTimes (string, times) {
+  if (times > 0) {
+    return string.repeat(times);
+  } else {
+    return "";
+  }
+}
+
+//可以用三元运算符优化
+function repeatStringNumTimes (string, times) {
+  return times > 0 ? string.repeat(times) : "";
+}
