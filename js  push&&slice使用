@@ -1,0 +1,11 @@
+把一个数组arr按照指定的数组大小size分割成若干个数组块
+例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];
+
+function chunk (arr,size) {
+  var newArr = [];
+  for (var i = 0 ; i < arr.length / size ; i++) {
+    newArr.push(arr.slice(i * size , size * (i + 1)));
+  }
+  return newArr;
+}
+chunk([1,2,3,4],2);
