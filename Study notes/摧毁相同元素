@@ -1,0 +1,13 @@
+function destroyer (arr) {
+  var destroyElementArr = [];                               //定义并初始化一个数组，保存函数中的要被摧毁的元素
+  for (var i = 1 ; i < arguments.length ; i++) {            //遍历函数的参数，从第二个开始，即要被摧毁的元素
+    destroyElementArr.push(arguments[i]);                   //依次压入数组
+  }
+  var filtered = arguments[0].filter(function (num) {       //用filter中的回调函数检查数组中是否包含要摧毁的元素
+    if (destroyElementArr.indexOf(num) < 0) return true;    //若下标为负，说明没找到	
+    return false;
+  });
+  return destroyElementArr;                                 //返回最终所有通过测试的元素，即不包含被摧毁的元素的一个新数组
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);  //[1,1]
