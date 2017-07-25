@@ -1,0 +1,40 @@
+1.基本解法：排序后通过indexOf()查找==========================================
+
+function where (arr,num) {
+  arr.push(num);
+  arr.sort(function (a,b) {
+    return a - b;
+  });
+  return arr.indexOf(num);
+}
+
+where([10, 20, 30, 40, 50], 35);
+
+2.优化-循环法================================================
+思路：如果数组中有3个数比num小，那num就得排在第 4 位，因此这时候num的index就为 3
+     所以，得出结论，如果有n个数比num小，那我们直接返回n就可以了
+
+function where (arr,num) {
+  var count = 0;
+  for (var i = 0 ; i < arr.length ; i++) {
+    if (arr[i] < num) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+3.使用filter=======================================================
+思路：既然想知道有多少个元素比num小，那么根据这个条件过滤数组，然后用 .length  获取数组长度，就能得出有多少个元素比num小
+
+3.1 ES5===========
+function where (arr,num) {
+  return arr.filter(function (e) {
+    return e < num;
+  }).length;
+}
+
+3.2 ES6===========
+function where (arr,num) {
+  return arr.filter(e => e < num).length;
+}
