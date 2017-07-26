@@ -1,0 +1,28 @@
+A-Z对应的就是65-90。而ROT13是将大写字符串将向后移13位，然后转换成对应的字符。那么：
+  小于65和大于90对应的就是小写字符a-z
+  大于等于65和小于等于77对应的就是大写字符A-M
+  大于等于78和小于等于90对应的就是大写字符N-Z
+
+实现思路：
+  声明一个变量newString，用来存一个空的字符串
+  使用String.charCodeAt()查询对应字符的ASCII序号
+  如果字符是非大写英文字母(序号小于65或大于90)，将该字符直接放到newString中，并使用continue进入下一个循环
+  如果序号小于78(A-M字母)，使用String.fromCharCode()转换成该序号加13的字符，并且放入newString
+  如果序号大于77(N-Z字母)，使用String.fromCharCode()转找成该序号减13的字符，并且放入newString
+  返回newString
+
+function rot13 (str) {
+  var newString = [];
+  for (var i = 0 ; i < str.length ; i++) {
+    var temp = str.charCodeAt(i);
+    if (temp < 65 || temp > 90) {
+      newString.push(str.charAt(i));
+      continue;
+    } else if (temp > 77) {
+      newString.push(String.fromCharCode(temp - 13));
+    } else {
+      newString.push(String.fromCharCode(temp + 13));
+    }
+  }
+  return newString.join("");
+}
