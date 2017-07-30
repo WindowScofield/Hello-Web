@@ -9,5 +9,4 @@ function destroyer (arr) {
   });
   return destroyElementArr;                                 //返回最终所有通过测试的元素，即不包含被摧毁的元素的一个新数组
 }
-
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);  //[1,1]
