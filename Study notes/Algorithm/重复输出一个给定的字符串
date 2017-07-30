@@ -1,4 +1,4 @@
-//重复输出一个给定的字符串（str第一个参数）n 次 （num第二个参数），如果第二个参数num不是正数的时候，返回空字符串。
+//重复输出一个给定的字符串（str第一个参数）n 次 （num第二个参数），如果第二个参数num不是正数的时候，返回空字符串
 
 function repeatStringNumTimes(str, num) {
   return str;
