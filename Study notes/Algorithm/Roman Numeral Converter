@@ -1,6 +1,6 @@
-1.ReverseArr 数组用来将输入数字转换成字符数组后倒序保存，这样 ReverseArr[0] 永远是输入数字的个位数，便于处理。
-2.CorrectArr 数组用来将每个 ReverseArr 数组的数字查表转换成对应的罗马数字。
-3.最终返回 CorrectArr 数组经过 join 方法后连接起来的字符串。
+1.ReverseArr 数组用来将输入数字转换成字符数组后倒序保存，这样 ReverseArr[0] 永远是输入数字的个位数，便于处理
+2.CorrectArr 数组用来将每个 ReverseArr 数组的数字查表转换成对应的罗马数字
+3.最终返回 CorrectArr 数组经过 join 方法后连接起来的字符串
 
 
 var Roman = [["","I","II","III","IV","V","VI","VII","VIII","IX"],
