@@ -1,3 +1,5 @@
+/\W|_/g  正则匹配
+
 function (str) {
   // \W--> 匹配所有的字母、数字、下划线以外的字符
   str = str.replace(/\W|_/g,"").toLowerCase();
