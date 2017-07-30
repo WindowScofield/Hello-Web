@@ -1,4 +1,5 @@
 把一个数组arr按照指定的数组大小size分割成若干个数组块
+
 例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];
 
 function chunk (arr,size) {
